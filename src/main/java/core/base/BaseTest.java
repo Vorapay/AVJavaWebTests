@@ -33,8 +33,7 @@ public class BaseTest {
             }
             properties.load(input);
         } catch (Exception e) {
-            throw new IllegalStateException("Unable to load configuration file:
-                    " + configFileName, e);
+            throw new IllegalStateException("Unable to load configuration file: " + configFileName, e);
         }
         return properties.getProperty("baseUrl");
     }
