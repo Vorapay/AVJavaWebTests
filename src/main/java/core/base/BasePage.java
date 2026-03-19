@@ -9,9 +9,6 @@ public abstract class BasePage {
     protected SelenideElement headerLogo = $("[tsid='toolbar_logo']");
     protected SelenideElement searchField = $("[name='st.query']");
     protected SelenideElement vkServices = $("[data-l='t,vk_ecosystem']");
-   //protected SelenideElement acceptCookie = $("");
-    //protected SelenideElement acceptPrivacyButton = $("");
-
 
     public void search(String query) {
         searchField.shouldBe(visible).setValue(query).pressEnter();
