@@ -18,6 +18,7 @@ public class LoginPage extends BasePage {
     private SelenideElement mailRuButton = $("[class='i ic social-icon __s __mailru']");
     private SelenideElement yandexButton = $("[class='i ic social-icon __s __yandex']");
     private SelenideElement errorMessage = $x("//span[contains(@class, 'LoginForm-module__error')]");
+    private SelenideElement goToRecoveryButton = $x("//span[@class='vkuiButton__content' and text()='Восстановить']");
 
     {
         verifyPageElements();
@@ -61,7 +62,7 @@ public class LoginPage extends BasePage {
     @Step("Вводим только пароль: {password}")
     public void onlyPassword(String password) {
         passwordField.shouldBe(visible).setValue(password);
-        loginButton.shouldBe(visible).click();
+       // loginButton.shouldBe(visible).click();
     }
 
 
@@ -89,5 +90,18 @@ public class LoginPage extends BasePage {
     private void loginYandex() {
         yandexButton.shouldBe(visible).click();
     }
+
+    @Step("Нажимаем Восстановить профиль")
+    public void goToRecovery() {
+        goToRecoveryButton.shouldBe(visible).click();
+    }
+
+    @Step("Нажимаем на кнопку войти")
+    public void clickLogin() {
+        loginButton.shouldBe(visible).click();
+    }
+
+
 }
+
 
