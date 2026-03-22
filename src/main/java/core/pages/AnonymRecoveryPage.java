@@ -12,7 +12,7 @@ public class AnonymRecoveryPage extends BasePage {
 
     private SelenideElement recoveryByPhoneButton = $("[data-l='t,phone']");
     private SelenideElement recoveryByEmailButton = $("[data-l='t,email']");
-    private SelenideElement goToSupportButton = $x("//div[class='support-link_item-text' and text()='Обратиться в службу поддержки']");
+    private SelenideElement goToSupportButton = $x("//div[@class='support-link_item-text' and text()='Обратиться в службу поддержки']");
 
     {
         verifyPageElements();
@@ -30,7 +30,7 @@ public class AnonymRecoveryPage extends BasePage {
         recoveryByPhoneButton.shouldBe(visible).click();
     }
 
-    @Step("Переходим к технической поддержке")
+    @Step("Нажимаем на кнопку восстановления через Email")
     public void goToRecoveryByEmail() {
         recoveryByEmailButton.shouldBe(visible).click();
     }

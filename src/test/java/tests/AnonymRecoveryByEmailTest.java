@@ -27,6 +27,6 @@ public class AnonymRecoveryByEmailTest extends BaseTest {
         }
         loginPage.goToRecovery();
         anonymRecoveryPage = new AnonymRecoveryPage();
-        anonymRecoveryPage.goToRecoveryByPhone();
+        anonymRecoveryPage.goToRecoveryByEmail();
     }
 }
