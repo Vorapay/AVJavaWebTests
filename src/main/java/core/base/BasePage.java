@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 public abstract class BasePage {
     protected SelenideElement headerLogo = $("[tsid='toolbar_logo']");
     protected SelenideElement searchField = $("[name='st.query']");
-    protected SelenideElement vkServices = $("[data-l='t,vk_ecosystem']");;
+    protected SelenideElement vkServices = $("[data-l='t,vk_ecosystem']");
 
     public void search(String query) {
         searchField.shouldBe(visible).setValue(query).pressEnter();
