@@ -68,7 +68,7 @@ public class LoginPage extends BasePage {
 
 
     @Step("Переходим на страницу восстановления пароля")
-    private void openForgotPasswordPage() {
+    public void openForgotPasswordPage() {
         forgotPasswordLink.shouldBe(visible).click();
     }
 
