@@ -38,4 +38,14 @@ public class RecoveryByPhone extends BasePage {
     public void clickToCodeButton() {
         getCodeButton.shouldBe(visible).click();
     }
+
+    @Step("Выбираем код страны по названию: {countryName}")
+    public String selectCountryByName(String countryName) {
+        countryField.click();
+        SelenideElement countryItem = $(String.format(".country-select_i[data-name='%s']", countryName));
+        countryItem.scrollTo();
+        String countryCode = countryItem.find(".country-select_code").text();
+        countryItem.click();
+        return countryCode;
+    }
 }
