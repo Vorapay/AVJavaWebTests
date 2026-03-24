@@ -19,7 +19,7 @@ public class LoginPage extends BasePage {
     private SelenideElement yandexButton = $("[class='i ic social-icon __s __yandex']");
     private SelenideElement errorMessage = $x("//span[contains(@class, 'LoginForm-module__error')]");
     private SelenideElement goToRecoveryButton = $x("//span[@class='vkuiButton__content' and text()='Восстановить']");
-
+    private SelenideElement loginQrCodeButton = $("[role='presentation']");
     {
         verifyPageElements();
     }
@@ -34,6 +34,7 @@ public class LoginPage extends BasePage {
         vkButton.shouldBe(visible);
         mailRuButton.shouldBe(visible);
         yandexButton.shouldBe(visible);
+        loginQrCodeButton.shouldBe(visible);
     }
 
     @Step("Проверяем видимость сообщения об ошибке входа")
@@ -67,7 +68,7 @@ public class LoginPage extends BasePage {
 
 
     @Step("Переходим на страницу восстановления пароля")
-    private void openForgotPasswordPage() {
+    public void openForgotPasswordPage() {
         forgotPasswordLink.shouldBe(visible).click();
     }
 
@@ -101,7 +102,10 @@ public class LoginPage extends BasePage {
         loginButton.shouldBe(visible).click();
     }
 
-
+    @Step("Переход на страницу с QR кодом")
+    public void openQrCode() {
+        loginQrCodeButton.shouldBe(visible).click();
+    }
 }
 
 
