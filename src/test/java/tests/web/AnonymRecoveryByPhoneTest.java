@@ -1,10 +1,10 @@
-package tests;
+package tests.web;
 
 import com.codeborne.selenide.SelenideElement;
 import core.base.BaseTest;
-import core.pages.AnonymRecoveryPage;
-import core.pages.LoginPage;
-import core.pages.RecoveryByPhone;
+import core.pages.web.AnonymRecoveryPage;
+import core.pages.web.LoginPage;
+import core.pages.web.RecoveryByPhonePage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ public class AnonymRecoveryByPhoneTest extends BaseTest {
 
     private static LoginPage loginPage;
     private static AnonymRecoveryPage anonymRecoveryPage;
-    private static RecoveryByPhone recoveryByPhone;
+    private static RecoveryByPhonePage recoveryByPhonePage;
     SelenideElement errorMassage = $x("//div[@class='input-e js-ph-vl-hint' and text()='Неправильный номер телефона.']");
 
     @BeforeEach
@@ -34,10 +34,10 @@ public class AnonymRecoveryByPhoneTest extends BaseTest {
         loginPage.goToRecovery();
         anonymRecoveryPage = new AnonymRecoveryPage();
         anonymRecoveryPage.goToRecoveryByPhone();
-        recoveryByPhone = new RecoveryByPhone();
-        String countryCode = recoveryByPhone.selectCountryByName("Россия");
+        recoveryByPhonePage = new RecoveryByPhonePage();
+        String countryCode = recoveryByPhonePage.selectCountryByName("Россия");
         assertEquals("+7", countryCode, "Код Страны не совпадает с ожидаемым");
-        recoveryByPhone.clickToCodeButton();
+        recoveryByPhonePage.clickToCodeButton();
         String errorMassageText = errorMassage.getText();
         String expectedMassageText = "Неправильный номер телефона.";
         assertEquals(expectedMassageText, errorMassageText);

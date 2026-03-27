@@ -1,8 +1,8 @@
-package tests;
+package tests.web;
 
 import core.base.BaseTest;
-import core.pages.LoginPage;
-import core.pages.SearchGroupsPage;
+import core.pages.web.LoginPage;
+import core.pages.web.SearchGroupsPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +19,7 @@ public class SearchGroupsTest extends BaseTest {
     }
 
     @Test
-    public void LoginWithQrCodeTest() {
+    public void TestSearchGroup() {
         loginPage.search("Тестировщик");
         searchGroupsPage = new SearchGroupsPage();
         searchGroupsPage.verifyGroupsExistSimple();

@@ -1,14 +1,18 @@
-package tests;
+package tests.web;
 
+import com.codeborne.selenide.WebDriverRunner;
 import core.base.BaseTest;
-import core.pages.AnonymRecoveryPage;
-import core.pages.LoginPage;
+import core.pages.web.AnonymRecoveryPage;
+import core.pages.web.LoginPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class AnonymRecoveryByEmailTest extends BaseTest {
+public class AnonymMobRecoveryByEmailTest extends BaseTest {
     private static LoginPage loginPage;
     private static AnonymRecoveryPage anonymRecoveryPage;
 

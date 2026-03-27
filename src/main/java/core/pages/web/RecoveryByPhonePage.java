@@ -1,4 +1,4 @@
-package core.pages;
+package core.pages.web;
 
 import com.codeborne.selenide.SelenideElement;
 import core.base.BasePage;
@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class RecoveryByPhone extends BasePage {
+public class RecoveryByPhonePage extends BasePage {
 
     private SelenideElement phoneNumberField = $("[tsid='phone-form_input_fe1c7a']");
     private SelenideElement countryField = $("[tsid='phone-form_input_d363f7']");
