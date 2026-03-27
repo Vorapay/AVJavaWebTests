@@ -9,6 +9,23 @@ repositories {
     mavenCentral()
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+// ДОБАВЬТЕ ЭТОТ БЛОК - настройка для тестов
+test {
+    useJUnitPlatform()
+    systemProperty "file.encoding", "utf-8"
+    systemProperty "sun.jnu.encoding", "utf-8"
+
+    // Опционально: увеличить таймауты и добавить логирование
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat = 'full'
+    }
+}
+
 dependencies {
     // JUnit 5
     implementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
